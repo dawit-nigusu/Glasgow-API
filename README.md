@@ -1,80 +1,116 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-read me
+PocketDoc Assesment
+The Glasgow Score Calculator Documentation
+Some Theory
+The Glasgow score was initially made for the evaluation of head trauma, however it allows a good
+description of the patient's state at a given moment and especially to follow the evolution of his state of
+consciousness. The Glasgow score is rated from 3 to 15 and must be broken down into its three
+parameters noted Y + V + M = 3 to 15
+This simple mobile application helps Doctors to calculate Glasgow score and predict the percentage of
+Recovery and Mortality with the ease of clicking a button .
+I used the following data from https://www.sfmu.org/calculateurs/glasgow.htm to do simple Analysis
+report for each calculation
+Analysis :
+•Score of 3 or 4: about 7% good recovery. - About 87% mortality.
+•Score of 5 to 7: approximately 34% good recovery. - About 53% mortality.
+•Score of 8 to 10: approximately 68% good recovery. - About 27% mortality.
+•Score greater than 10: approximately 82% good recovery. - About 12% mortality.
+API
+Glasgow Score Calculator API is built using PHP and use Laravel MVC framework and uses
+postgresQl database to store the structure of the Glasgow Score parameters and options.using this API
+we can create, update, Fetch and delete options under three parameters in the Glasgow Score
+Calculation
+How to depoly
+- clone or download zip Glasgow Score Calculator API codebase from github
+- change .env configration according to your database username and password
+- create postgresql or mysql database with the same name you put in .env configration
+- migrate the tables to the connected database using the following command
+php artisan migrate
+- finally run the server
+php artisan serve
+you can access the Api using postman or browser through the local link
+http://127.0.0.1:8000/api/endpoints on the local server
+For eye opening parameter
+http://127.0.0.1:8000/api/eye_opening s --- fetch all options for eye opening
+http://127.0.0.1:8000/api/eye_opening/5---- -- get one option using its id (5 in this case)
+Json fetched from ey_opening of the api
+const eyeOpeningData = [
+{
+label: "Spontaneous",
+selected: false,
+value: 4,
+},
+{ label: "On Verbal Command", selected: true, value: 3 },
+{
+label: "To pain",
+selected: false,
+value: 2,
+},
+{ label: "Nothing", selected: false, value: 1 },
+];
+For eye Verbal Response
+http://127.0.0.1:8000/api/ verbal_responses --- fetch all options under verbal response
+http://127.0.0.1:8000/api/ verbal_response /5 --- get one option using its id (5 in this case)
+JSON returned from verbal response of the api
+const verbalResponseData = [
+{
+label: "Appropraited,oriented",
+selected: false,
+value: 5,
+},
+{ label: "Confused", selected: false, value: 4 },
+{
+label: "Inconsistent",
+selected: true,
+value: 3,
+},
+{
+label: "incomprehensible",
+selected: false,
+value: 2,
+},{
+label: "Nothing",
+selected: false,
+value: 1,
+},
+];
+For eye Verbal Response
+http://127.0.0.1:8000/api/ motor_responses --- fetch all options under Motor response
+http://127.0.0.1:8000/api/motor_response/5 --- get one option using its id (5 in this case)
+const motorResponseData = [
+{
+label: "Obdience to veerbal orders",
+selected: false,
+value: 6,
+},
+{
+label: "Pain-oriented reaction",
+selected: false,
+value: 5,
+},
+{
+label: "Non-oriented pain response",
+selected: false,
+value: 4,
+},
+{
+label: "With decortication type",
+selected: true,
+value: 3,
+},
+{
+label: "type of decerebration",
+selected: false,
+value: 2,
+},
+{
+label: "Nothig",
+selected: false,
+value: 1,
+},
+];Mobile Application
+Glasgow Score Calculator mobile application is
+built using React Native ,it uses Axios to fetch the
+data from the API
+the app requests to the API to fetch the stucture of
+the Glasgow Score to construct the interface and use
+it for the calculation
